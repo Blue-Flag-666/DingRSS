@@ -2,7 +2,9 @@ name: DingRSS
 
 on:
   schedule:
-    - cron: '0 0/1 * * *'
+    - cron: '0,30 21,22,23,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 * * *'
+  watch:
+    types: [started]
 
 jobs:
   build:
@@ -10,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -26,10 +28,13 @@ jobs:
         python main.py
     - name: Commit
       run: |
-        git config --global user.email ph4nt0merd@gmail.com
-        git config --global user.name ph4nt0merd
-        git add .
-        git commit -m "Update caches" -a
+        git config --global user.email 64064866+Galaxy-Studio-Code@users.noreply.github.com
+        git config --global user.name Bot     
+        if [ -n "$(git status -s)" ];then
+            git add .
+            git commit -m "update caches"
+            git push origin master
+        fi
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:

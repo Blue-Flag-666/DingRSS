@@ -33,12 +33,11 @@ class RSSBot(object):
         yaml.dump(self._caches, wp)
 
     def _pushMessage(self, feedMeta, feedEntries):
-        picUrl = "https://images.unsplash.com/photo-1548092372-0d1bd40894a3?ixid=" \
-                 "MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
         for entry in feedEntries:
+            picUrl = entry.link.replace("github.com", "opengraph.githubassets.com/" + entry.updated)
             cardItem = CardItem(title=entry.title + " - " + feedMeta.title, url=entry.link, pic_url=picUrl)
             self._cardItems.append(cardItem)
-            if len(self._cardItems) == 5:
+            if len(self._cardItems) > 0:
                 self._sendCard()
 
     def _sendCard(self):
