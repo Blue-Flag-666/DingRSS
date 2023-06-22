@@ -2,8 +2,8 @@ cache:
   Placeholder:
     latest_id: this is placeholder
   https://github.com/CrazyZhang666/GTA5OnlineTools/commits.atom:
-    latest_id: tag:github.com,2008:Grit::Commit/78a7a0a49de12ceed2b20800837302bfb4dfd8c8
+    latest_id: tag:github.com,2008:Grit::Commit/0d0d6e424a09891c6606745d18ed0dbb11d397ad
   https://github.com/MAFINS/MenyooSP/commits.atom:
     latest_id: tag:github.com,2008:Grit::Commit/b91068a18e6529f39bb881cd5303f20f562102e7
   https://github.com/YimMenu/YimMenu/commits.atom:
-    latest_id: tag:github.com,2008:Grit::Commit/9936e81bf31d18cf212558dfe4674d16d6eccb4b
+    latest_id: tag:github.com,2008:Grit::Commit/c577258c0da6b45d4a3e11fcb78eff2803c17328
